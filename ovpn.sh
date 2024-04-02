@@ -656,7 +656,7 @@ sysctl -p
 
 install_rclocal(){
   {
-    wget https://pastebin.com/raw/faSsYhFf -O /etc/ubuntu
+    wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/wscfg -O /etc/ubuntu
     dos2unix /etc/ubuntu
     chmod +x /etc/ubuntu    
     screen -dmS socks python /etc/ubuntu
