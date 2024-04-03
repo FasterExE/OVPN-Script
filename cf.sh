@@ -24,7 +24,7 @@ DOMAIN=ilyass.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c6)
 SUB_DOMAIN=${sub}.ilyass.my.id
 CF_ID=ilyassnajhi10@gmail.com
-CF_KEY=qGqGSoVuSaiEnlc86C76CvtgEQmwiN6lwZdxBrLx
+CF_KEY=c802b86ce41793d4aed457ad769889b7e31e9
 
 
 NS_DOMAIN=tknetwork-${SUB_DOMAIN}
