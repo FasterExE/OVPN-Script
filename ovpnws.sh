@@ -13,7 +13,7 @@ echo 'Installing dependencies.'
 {
 export DEBIAN_FRONTEND=noninteractive
 apt update
-apt install -y curl cron python-minimal libpython-stdlib
+apt install -y curl wget cron python-minimal libpython-stdlib
 apt install -y iptables
 apt install -y openvpn vnstat
 apt install -y stunnel4 gnutls-bin python
