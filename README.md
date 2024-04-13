@@ -1,7 +1,7 @@
 ## UPGRADE FOR DEBIAN AND UBUNTU
 Enter the command below if you are using OS Debian Version 9→12 or OS Ubuntu Version 18→22
 ```
-apt update && apt upgrade -y --fix-missing && update-grub && sleep 2 && apt -y install xxd && apt install -y bzip2 && apt install -y wget && apt install -y curl && reboot
+apt update -y && apt upgrade -y
 ```
 
 ## INSTALL SCRIPT 
