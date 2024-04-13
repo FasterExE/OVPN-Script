@@ -434,7 +434,6 @@ cert = /etc/stunnel/stunnel.pem
 [openvpn-tcp]
 connect = 1194
 accept = 443
-
 [openvpn-udp]
 connect = 8443
 accept = 444
