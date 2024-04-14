@@ -1,8 +1,8 @@
+#!/bin/bash
+#Script Variables
 timedatectl set-timezone Asia/Riyadh
 PORT_TCP='1194'
 PORT_UDP='2200'
-domain=`cat /etc/domain/d-domain`
-flare=`cat /etc/domain/f-domain`
 install_require () {
 clear
 echo 'Installing dependencies.'
