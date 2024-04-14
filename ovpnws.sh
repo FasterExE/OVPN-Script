@@ -542,39 +542,34 @@ echo 'Starting..'
 {
 
 sudo crontab -l | { echo "* * * * * pgrep -x stunnel4 >/dev/null && echo 'GOOD' || /etc/init.d/stunnel4 restart
-* * * * * /bin/bash /etc/.ws >/dev/null 2>&1
-* * * * * /bin/bash /etc/.hysteria >/dev/null 2>&1
-* * * * * /bin/bash /etc/.monitor openvpn >/dev/null 2>&1"; } | crontab -
+* * * * * /bin/bash /etc/hysteria/online.sh >/dev/null 2>&1
+* * * * * /bin/bash /usr/local/sbin/jho/cron.sh >/dev/null 2>&1
+* * * * * /bin/bash /etc/hysteria/ws.sh >/dev/null 2>&1
+* * * * * /bin/bash /etc/hysteria/monitor.sh openvpn >/dev/null 2>&1"; } | crontab -
 sudo systemctl restart cron
 } &>/dev/null
 clear
-echo -e "\033[1;96m──────────────────────────────────\033[0m"
-echo -e "\033[1;97mIP               : $IP\033[0m"
-echo -e "\033[1;97mHost             : $domain\033[0m"
-echo -e "\033[1;97mCloudflare       : $flare\033[0m"
-echo -e "\033[1;97mPort OVPN TCP    : 1194\033[0m"
-echo -e "\033[1;97mPort OVPN UDP    : 2200\033[0m"
-echo -e "\033[1;97mPort OVPN WS     : 80\033[0m"
-echo -e "\033[1;97mPort OVPN SSL    : 443\033[0m"
-echo -e "\033[1;96m──────────────────────────────────\033[0m"
-echo -e "\033[1;97m         SCRIPT BY ILYASS\033[0m"
-echo -e "\033[1;96m──────────────────────────────────\033[0m"
-rm ovpnws.sh
+echo "OPENVPN SERVER ILYASS"
+echo "IP : $(curl -s https://api.ipify.org)"
+echo "OPENVPN TCP port : 1194"
+echo "OPENVPN UDP port : 8443"
+echo "OPENVPN SSL port : 443"
+echo "OPENVPN WS port : 80"
 echo 'Server will secure this server and reboot after 20 seconds'
 sleep 20
 reboot
 }
 
+
+
 server_ip=$(curl -s https://api.ipify.org)
 server_interface=$(ip route get 8.8.8.8 | awk '/dev/ {f=NR} f&&NR-1==f' RS=" ")
 
 install_require
-install_socks
-install_domain
-install_menu
 installBBR
 install_openvpn
 install_firewall_kvm
 install_stunnel
 install_rclocal
+install_socks
 start_service
