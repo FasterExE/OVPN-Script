@@ -48,10 +48,6 @@ echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}8${DARK_ORANGE}]
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_BBR.sh >/dev/null 2>&1
 bash install_BBR.sh >/dev/null 2>&1
 rm install_BBR.sh >/dev/null 2>&1
-sudo apt-get install iptables-persistent -y
-wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_BBR2.sh >/dev/null 2>&1
-bash install_BBR2.sh >/dev/null 2>&1
-rm install_BBR2.sh >/dev/null 2>&1
 echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}9${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL FIREWALL KVM${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_firewall_kvm.sh >/dev/null 2>&1
 bash install_firewall_kvm.sh >/dev/null 2>&1
