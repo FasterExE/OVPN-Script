@@ -1,8 +1,9 @@
 #!/bin/bash
 #Script Variables
-timedatectl set-timezone Asia/Riyadh
 PORT_TCP='1194'
 PORT_UDP='2200'
+
+timedatectl set-timezone Asia/Riyadh
 install_require () {
 clear
 echo 'Installing dependencies.'
@@ -47,7 +48,7 @@ systemctl enable ws-ovpn
 systemctl restart ws-ovpn
 }&>/dev/null
 
-install_socks()
+install_domain()
 {
 clear
 echo "Setup Domain."
@@ -567,12 +568,10 @@ reboot
 server_ip=$(curl -s https://api.ipify.org)
 server_interface=$(ip route get 8.8.8.8 | awk '/dev/ {f=NR} f&&NR-1==f' RS=" ")
 
-install_require  
-if [[ $HYSTERIA_TYPE == 'default' ]]; then
-	install_hysteria
-elif [[ $HYSTERIA_TYPE == 'zi' ]]; then
-	install_zi
-fi
+install_require
+install_socks
+install_domain
+install_menu
 installBBR
 install_openvpn
 install_firewall_kvm
