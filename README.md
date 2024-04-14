@@ -17,7 +17,7 @@ wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/setup.sh; bash
 ## PORT INFO
 ```
 - OVPN TCP        : 1194
-- OVPN UDP        : 8443
+- OVPN UDP        : 2200
 - OVPN WEBSOCKET  : 80
 - OVPN SSL        : 443
 ```
