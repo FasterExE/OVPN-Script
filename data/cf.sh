@@ -4,6 +4,8 @@ apt install jq curl -y
 rm -rf /etc/domain/d-domain
 rm -rf /etc/domain/f-domain
 mkdir -p /etc/domain
+touch /etc/domain/d-domain
+touch /etc/domain/f-domain
 clear
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 DOMAIN=ilyass.my.id
