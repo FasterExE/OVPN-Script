@@ -57,7 +57,7 @@ wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_f
 bash install_firewall_kvm.sh >/dev/null 2>&1
 rm install_firewall_kvm.sh >/dev/null 2>&1
 echo -e "\033[1;36m──────────────────────────────────────────────────────────\033[0m"
-slep 6
+sleep 6
 sudo apt-get install iptables-persistent -y
 clear
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/finish.sh
