@@ -1,0 +1,51 @@
+#!/bin/bash
+clear
+red() { echo -e "\\033[32;1m${*}\\033[0m"; }
+GARIS="\033[1;36m"
+NC="\033[0m"
+clear
+echo -e "\033[1;36m──────────────────────────────────\033[0m"
+echo -e "\033[1;97m          SSH OVPN ACCOUNT\033[0m"
+echo -e "\033[1;36m──────────────────────────────────\033[0m"
+read -p "Username : " LOGIN
+read -p "Password : " PASSWD
+read -p "Expired (hari): " EXPIRED
+IP=$(hostname -I | awk '{print $1}')
+domain=`cat /etc/domain/d-domain`
+flare=`cat /etc/domain/f-domain`
+useradd -e `date -d "$EXPIRED days" +"%Y-%m-%d"` -s /bin/false -M $LOGIN
+exp="$(chage -l $LOGIN | grep "Account expires" | awk -F": " '{print $2}')"
+echo -e "$PASSWD\n$PASSWD\n"|passwd $LOGIN &> /dev/null
+
+if [[ ${c} != "0" ]]; then
+  echo "${d}" >/etc/ssh/${LOGIN}
+fi
+DATADB=$(cat /etc/ssh/.ssh.db | grep "^#ssh#" | grep -w "${LOGIN}" | awk '{print $2}')
+if [[ "${DATADB}" != '' ]]; then
+  sed -i "/\b${LOGIN}\b/d" /etc/ssh/.ssh.db
+fi
+echo "#ssh# ${LOGIN} " >>/etc/ssh/.ssh.db
+clear
+clear
+echo -e "\033[1;96m──────────────────────────────────\033[0m"
+echo -e "\033[1;97m         Format OVPN Account\033[0m"
+echo -e "\033[1;96m──────────────────────────────────\033[0m"
+echo -e "\033[1;93mUsername         : $LOGIN\033[0m"
+echo -e "\033[1;93mPassword         : $PASSWD\033[0m"
+echo -e "\033[1;93mExpired          : $exp\033[0m   "
+echo -e "\033[1;96m──────────────────────────────────\033[0m"
+echo -e "\033[1;97mIP               : $IP\033[0m"
+echo -e "\033[1;97mHost             : $domain\033[0m"
+echo -e "\033[1;97mCloudflare       : $flare\033[0m"
+echo -e "\033[1;97mPort OVPN TCP    : 1194\033[0m"
+echo -e "\033[1;97mPort OVPN UDP    : 2200\033[0m"
+echo -e "\033[1;97mPort OVPN WS     : 80\033[0m"
+echo -e "\033[1;97mPort OVPN SSL    : 443\033[0m"
+echo -e "\033[1;96m──────────────────────────────────\033[0m"
+echo -e "\033[1;97mOpenVPN TCP : https://$(hostname -I | awk '{print $1}'):89/tcp.ovpn\033[0m"
+echo -e "\033[1;97mOpenVPN UDP : https://$(hostname -I | awk '{print $1}'):89/udp.ovpn\033[0m"
+echo -e "\033[1;96m──────────────────────────────────\033[0m"
+echo -e "\033[1;97m         SCRIPT BY ILYASS\033[0m"
+echo -e "\033[1;96m──────────────────────────────────\033[0m"
+read -n 1 -s -r -p "Press [ Enter ] to back on menu"
+menu
