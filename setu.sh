@@ -22,41 +22,35 @@ echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}1${DARK_ORANGE}]
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_require.sh
 bash install_require.sh
 rm install_require.sh
-
+echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}2${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL APACHE${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_apache2.sh
 bash install_apache2.sh
 rm install_apache2.sh
-
+echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}3${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL SOCKS${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_socks.sh
 bash install_socks.sh
 rm install_socks.sh
-
-
+echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}4${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL DOMAIN${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_domain.sh
 bash install_domain.sh
 rm install_domain.sh
-
-
+echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}5${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL MENU${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_menu.sh
 bash install_menu.sh
 rm install_menu.sh
-
-
+echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}6${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL OPENVPN${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_openvpn.sh
 bash install_openvpn.sh
 rm install_openvpn.sh
-
-
+echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}7${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL STUNNEL${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_stunnel.sh
 bash install_stunnel.sh
 rm install_stunnel.sh
-
-
+echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}8${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL BBR${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_BBR.sh
 bash install_BBR.sh
 rm install_BBR.sh
-
-
+echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}9${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL FIREWALL KVM${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_firewall_kvm.sh
 bash install_firewall_kvm.sh
 rm install_firewall_kvm.sh
