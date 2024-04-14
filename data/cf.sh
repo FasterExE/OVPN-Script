@@ -9,8 +9,8 @@ touch /etc/domain/f-domain
 clear
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
 DOMAIN=ilyass.my.id
-WS_DOMAIN=ws-${sub}.ilyass.my.id
-FLARE_DOMAIN=flare-${sub}.ilyass.my.id
+WS_DOMAIN=ws-${sub}.ovpn.ilyass.my.id
+FLARE_DOMAIN=flare-${sub}.ovpn.ilyass.my.id
 NS_DOMAIN=ns-${sub}.ilyass.my.id
 CF_ID=ilyassnajhi10@gmail.com
 CF_KEY=c802b86ce41793d4aed457ad769889b7e31e9
