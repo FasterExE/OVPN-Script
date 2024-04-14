@@ -12,7 +12,6 @@ sysctl -p
  echo "tcp_bbr" >> /etc/modules-load.d/modules.conf
  INSTALL_BBR=true
  sudo sysctl -p
- sudo apt-get install --reinstall iptables-persistent
  sudo iptables -t nat -A POSTROUTING -o eth0 -s 10.20.0.0/16 -j MASQUERADE
  sudo iptables -t nat -A POSTROUTING -o eth0 -s 10.30.0.0/16 -j MASQUERADE
  sudo apt-get install iptables-persistent
