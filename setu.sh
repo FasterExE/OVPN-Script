@@ -18,8 +18,7 @@ echo -e "\e[38;5;208m      GitHub: \e[32mhttps://github.com/FasterExE\e[0m"
 echo -e "\e[38;5;208m      Telegram: \e[32mhttps://t.me/IlyassExE\e[0m"
 echo -e "\033[1;36m──────────────────────────────────────────────────────────\033[0m"
 
-
-echo -e "${DARK_ORANGE}            [${NO_COLOR}${DARK_BLUE}1${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL REQUIRE${NO_COLOR}"
+echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}1${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL REQUIRE${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_require.sh
 bash install_require.sh
 rm install_require.sh
