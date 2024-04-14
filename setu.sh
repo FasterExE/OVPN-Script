@@ -3,7 +3,7 @@ LIGHT_YELLOW='\033[1;33m'
 DARK_ORANGE='\033[0;31m'
 DARK_BLUE='\033[0;34m'
 NO_COLOR='\033[0m'
-
+clear
 echo -e "\033[1;36m──────────────────────────────────────────────────────────\033[0m"
 echo -e "\e[38;5;208m        _______ __   __   __ ______ _______ _______
        /__  __// /  / /  / // __  // _____// _____/
@@ -53,8 +53,8 @@ wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_f
 bash install_firewall_kvm.sh >/dev/null 2>&1
 rm install_firewall_kvm.sh >/dev/null 2>&1
 echo -e "\033[1;36m──────────────────────────────────────────────────────────\033[0m"
-
-slep 4
+slep 6
+sudo apt-get install iptables-persistent -y
 clear
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/finish.sh
 bash finish.sh
