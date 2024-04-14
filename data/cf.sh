@@ -76,19 +76,10 @@ RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_r
 echo "Host WS : $WS_DOMAIN"
 echo "Host FLARE: $FLARE_DOMAIN"
 echo "Host NS : $NS_DOMAIN"
-echo "IP=$WS_DOMAIN" > /var/lib/SIJA/ipvps.conf
-echo "$WS_DOMAIN" > /etc/domain/d-domain
-echo "$FLARE_DOMAIN" > /etc/domain/f-domain
-echo "$NS_DOMAIN" > /etc/domain/n-domain
-echo "$WS_DOMAIN" > /etc/domain/d-domain
-echo "$FLARE_DOMAIN" > /etc/domain/f-domain
-echo "$WS_DOMAIN" > /etc/domain/d-domain
-echo "$WS_DOMAIN" > /etc/domain/d-domain
-echo "$WS_DOMAIN" > /etc/domain/d-domain
 echo -e "Done Record Domain= $WS_DOMAIN"
 echo -e "Done Record Flare Domain= $FLARE_DOMAIN"
 echo -e "Done Record NSDomain= $NS_DOMAIN"
-echo '$WS_DOMAIN' > /etc/domain/d-domain
-echo '$FLARE_DOMAIN' >/etc/domain/f-domain 
+echo "$WS_DOMAIN" > /etc/domain/d-domain
+echo "$FLARE_DOMAIN" >/etc/domain/f-domain 
 rm -rf cf
 sleep 1
