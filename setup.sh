@@ -38,12 +38,6 @@ rm install_openvpn.sh
 
 
 clear
-wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_firewall_kvm.sh
-bash install_firewall_kvm.sh
-rm install_firewall_kvm.sh
-
-
-clear
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_stunnel.sh
 bash install_stunnel.sh
 rm install_stunnel.sh
@@ -53,6 +47,12 @@ clear
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_BBR.sh
 bash install_BBR.sh
 rm install_BBR.sh
+
+
+clear
+wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_firewall_kvm.sh
+bash install_firewall_kvm.sh
+rm install_firewall_kvm.sh
 
 
 clear
