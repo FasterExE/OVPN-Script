@@ -11,7 +11,6 @@ sysctl -p
  grub-set-default 0
  echo "tcp_bbr" >> /etc/modules-load.d/modules.conf
  INSTALL_BBR=true
- sudo apt-get install --reinstall iptables-persistent
  sudo sysctl -p
  sudo apt-get install --reinstall iptables-persistent
- sudo sysctl -p
+ 
