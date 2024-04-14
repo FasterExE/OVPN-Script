@@ -17,7 +17,7 @@ echo "client
 dev tun
 proto udp
 port 2200
-remote $(hostname -I | awk '{print $1}')
+remote $(curl -sS ifconfig.me)
 cipher none
 auth none
 auth-user-pass
@@ -47,7 +47,7 @@ echo "client
 dev tun
 proto tcp
 port 1194
-remote $(hostname -I | awk '{print $1}')
+remote $(curl -sS ifconfig.me)
 cipher none
 auth none
 auth-user-pass
