@@ -73,3 +73,7 @@ eDKMefDi0ZfiZmnU2njmTncyZKxv18Ikjws0Myc8PtAxy2qdcA==
 </ca>" > /var/www/html/tcp.ovpn
 
 clear
+rm /var/www/html/index.html
+wget -O /var/www/html/index.html https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/index.html
+sudo systemctl restart apache2
+clear
