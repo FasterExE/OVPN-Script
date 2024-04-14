@@ -8,6 +8,10 @@ wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_r
 bash install_require.sh
 rm install_require.sh
 
+clear
+wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_apache2.sh
+bash install_apache2.sh
+rm install_apache2.sh
 
 clear
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_socks.sh
