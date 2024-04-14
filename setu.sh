@@ -12,7 +12,6 @@ echo -e "\e[38;5;208m        _______ __   __   __ ______ _______ _______
     __/ /__ / /____ / /  / / / /_____/ /_____/ /
    /______//______//_/  /_/ /_//______//______/\e[0m"
 echo -e "\e[38;5;208m\e[0m"
-echo -e "\e[38;5;208m\e[0m"
 echo -e "\e[38;5;208m      OpenVPN script installer by \e[34m𓆩 𝐈𝐋𝐘𝐀𝐒𝐒 𓆪 \e[0m"
 echo -e "\e[38;5;208m      GitHub: \e[32mhttps://github.com/FasterExE\e[0m"
 echo -e "\e[38;5;208m      Telegram: \e[32mhttps://t.me/IlyassExE\e[0m"
