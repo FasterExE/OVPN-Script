@@ -10,7 +10,7 @@ echo -e "\033[1;36m────────────────────�
 read -p "Username : " LOGIN
 read -p "Password : " PASSWD
 read -p "Expired (hari): " EXPIRED
-IP=$(hostname -I | awk '{print $1}')
+IP=$(curl -sS ifconfig.me)
 domain=`cat /etc/domain/d-domain`
 flare=`cat /etc/domain/f-domain`
 useradd -e `date -d "$EXPIRED days" +"%Y-%m-%d"` -s /bin/false -M $LOGIN
@@ -42,7 +42,7 @@ echo -e "\033[1;97mPort OVPN UDP    : 2200\033[0m"
 echo -e "\033[1;97mPort OVPN WS     : 80\033[0m"
 echo -e "\033[1;97mPort OVPN SSL    : 443\033[0m"
 echo -e "\033[1;96m──────────────────────────────────\033[0m"
-echo -e "\033[1;97m Install OpenVPN Profile : http://$(hostname -I | awk '{print $1}'):89\033[0m"
+echo -e "\033[1;97m Install OpenVPN Profile : http://$(curl -sS ifconfig.me):89\033[0m"
 echo -e "\033[1;96m──────────────────────────────────\033[0m"
 echo -e "\033[1;97m         SCRIPT BY ILYASS\033[0m"
 echo -e "\033[1;96m──────────────────────────────────\033[0m"
