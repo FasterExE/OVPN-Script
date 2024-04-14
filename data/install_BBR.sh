@@ -14,6 +14,8 @@ INSTALL_BBR=true
 sudo sysctl -p
 sudo iptables -t nat -A POSTROUTING -o eth0 -s 10.20.0.0/16 -j MASQUERADE
 sudo iptables -t nat -A POSTROUTING -o eth0 -s 10.30.0.0/16 -j MASQUERADE
-sudo apt-get install iptables-persistent -y
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
 echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
+sudo apt-get install iptables-persistent -y
+sudo iptables -t nat -A POSTROUTING -o eth0 -s 10.20.0.0/16 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -o eth0 -s 10.30.0.0/16 -j MASQUERADE
