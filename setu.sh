@@ -21,6 +21,7 @@ echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}1${DARK_ORANGE}]
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_require.sh
 bash install_require.sh
 rm install_require.sh
+}&>/dev/null
 echo -e "${DARK_ORANGE}                 [${NO_COLOR}${DARK_BLUE}2${DARK_ORANGE}]${NO_COLOR} ${LIGHT_YELLOW}INSTALL APACHE${NO_COLOR}"
 wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/install_apache2.sh
 bash install_apache2.sh
