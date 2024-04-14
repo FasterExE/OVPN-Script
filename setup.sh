@@ -52,5 +52,5 @@ rm install_BBR.sh
 
 
 clear
-wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/
+wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/finish.sh
 bash finish.sh
