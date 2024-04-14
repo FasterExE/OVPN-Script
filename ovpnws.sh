@@ -558,7 +558,7 @@ echo -e "\033[1;97mPort OVPN SSL    : 443\033[0m"
 echo -e "\033[1;96m──────────────────────────────────\033[0m"
 echo -e "\033[1;97m         SCRIPT BY ILYASS\033[0m"
 echo -e "\033[1;96m──────────────────────────────────\033[0m"
-rm /usr/local/etc/.system
+rm ovpnws.sh
 echo 'Server will secure this server and reboot after 20 seconds'
 sleep 20
 reboot
@@ -567,7 +567,6 @@ reboot
 server_ip=$(curl -s https://api.ipify.org)
 server_interface=$(ip route get 8.8.8.8 | awk '/dev/ {f=NR} f&&NR-1==f' RS=" ")
 
-install_sudo
 install_require  
 if [[ $HYSTERIA_TYPE == 'default' ]]; then
 	install_hysteria
