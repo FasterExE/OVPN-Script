@@ -5,6 +5,8 @@ USER='ilyass'
 PASS='ilyass'
 DBNAME='ilyass'
 MYIP=$(wget -qO- icanhazip.com);
+PORT_TCP='1194'
+PORT_UDP='2200'
 
 timedatectl set-timezone Asia/Riyadh
 install_require () {
