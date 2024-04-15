@@ -13,9 +13,6 @@ mkdir -p /var/www/html/stat
 touch /etc/openvpn/server.conf
 touch /etc/openvpn/server2.conf
 
-#echo 'DNS=1.1.1.1
-#DNSStubListener=no' >> /etc/systemd/resolved.conf
-
 echo '# Openvpn Configuration By Ilyass
 dev tun
 port 2200
@@ -102,59 +99,6 @@ status /etc/openvpn/server/udpclient.log
 verb 3
 duplicate-cn
 plugin /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /etc/pam.d/login' > /etc/openvpn/server2.conf
-
-
-
-cat <<\EOM >/etc/openvpn/login/config.sh
-#!/bin/bash
-HOST='ilyass'
-USER='ilyass'
-PASS='ilyass'
-DB='ilyass'
-EOM
-
-
-
-
-/bin/cat <<"EOM" >/etc/openvpn/login/auth_vpn
-#!/bin/bash
-. /etc/openvpn/login/config.sh
-tm="$(date +%s)"
-dt="$(date +'%Y-%m-%d %H:%M:%S')"
-
-##Authentication
-PREM="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.duration > 0"
-VIP="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.vip_duration > 0"
-PRIV="users.user_name='$username' AND users.auth_vpn=md5('$password') AND users.is_validated=1 AND users.is_freeze=0 AND users.is_active=1 AND users.is_ban=0 AND users.private_duration > 0"
-Query="SELECT users.user_name FROM users WHERE $PREM OR $VIP OR $PRIV"
-user_name=`mysql -u $USER -p$PASS -D $DB -h $HOST --skip-column-name -e "$Query"`
-
-[ "$user_name" != '' ] && [ "$user_name" = "$username" ] && echo "user : $username" && echo 'authentication ok.' && exit 0 || echo 'authentication failed.'; exit 1
-
-
-EOM
-
-cat <<'EOF' >/etc/openvpn/login/connect.sh
-#!/bin/bash
-
-. /etc/openvpn/login/config.sh
-
-##set status online to user connected
-server_ip=$(curl -s https://api.ipify.org)
-datenow=`date +"%Y-%m-%d %T"`
-mysql -u $USER -p$PASS -D $DB -h $HOST -e "UPDATE users SET is_active='1', device_connected='1', active_address='$server_ip', active_date='$datenow' WHERE user_name='$common_name' "
-
-EOF
-
-#TCP client-disconnect file
-cat <<'EOF' >/etc/openvpn/login/disconnect.sh
-#!/bin/bash
-
-. /etc/openvpn/login/config.sh
-
-mysql -u $USER -p$PASS -D $DB -h $HOST -e "UPDATE users SET is_active='0', active_address='', active_date='' WHERE user_name='$common_name' "
-EOF
-
 
 cat << EOF > /etc/openvpn/easy-rsa/keys/ca.crt
 -----BEGIN CERTIFICATE-----
