@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clear
 logfile="/etc/openvpn/server/udpclient.log"
 
 
