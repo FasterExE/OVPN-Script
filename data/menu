@@ -12,7 +12,6 @@ NC='\e[0m'
 clear
 echo -e "${BIPurple} ┌─────────────────────────────────────────────┐${NC}"
 echo -e "${BIPurple} │             ${BIWhite}${UWhite}ILYASS  OVPN-SCRIPT${NC}"
-echo -e "${BIPurple} │"
 echo -e "${BIPurple} │  ${BIPurple}IP        :  ${BIYellow}$(curl -sS ifconfig.me)${NC}"
 echo -e "${BIPurple} │  ${BIPurple}DOMAIN    :  ${BIYellow}$(cat /etc/domain/d-domain)${NC}"
 echo -e "${BIPurple} │  ${BIPurple}FLARE     :  ${BIYellow}$(cat /etc/domain/f-domain)${NC}"
