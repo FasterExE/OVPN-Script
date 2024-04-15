@@ -16,8 +16,11 @@ echo -e "${BIPurple} │"
 echo -e "${BIPurple} │  ${BIPurple}IP        :  ${BIYellow}$(curl -sS ifconfig.me)${NC}"
 echo -e "${BIPurple} │  ${BIPurple}DOMAIN    :  ${BIYellow}$(cat /etc/domain/d-domain)${NC}"
 echo -e "${BIPurple} │  ${BIPurple}FLARE     :  ${BIYellow}$(cat /etc/domain/f-domain)${NC}"
+echo -e "${BIPurple} └─────────────────────────────────────────────┘${NC}"
+echo -e "${BIPurple} ┌─────────────────────────────────────────────┐${NC}"
 echo -e "${BIPurple} │"
-echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}01${BIPurple}] ADD USER     ${BIPurple}${NC}"  "${BIPurple}    [${BIWhite}02${BIPurple}] DELETE USER       ${NC}"
+echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}01${BIPurple}] ADD USER     ${BIPurple}${NC}"  "${BIPurple}    [${BIWhite}03${BIPurple}] USER ONLINE ${BIPurple}${NC}"
+echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}02${BIPurple}] DELETE USER  ${NC}"  
 echo -e "${BIPurple} └─────────────────────────────────────────────┘${NC}"
 DATE=$(date +'%d %B %Y')
 datediff() {
@@ -31,6 +34,8 @@ read -p " >>>>   " opt
 echo -e ""
 case $opt in
 1) clear ; add-user ;;
+2) clear ; del-user ;;
+3) clear ; on-user ;;
 2) clear ; del-user ;;
 0) clear ; menu ;;
 x) exit ;;
