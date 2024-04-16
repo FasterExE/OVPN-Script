@@ -128,14 +128,7 @@ echo -e "${BIPurple} └──────────────────�
 expiry_date=$(curl -sS https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access | grep "$(curl -sS ipv4.icanhazip.com)" | awk '{print $3}')
 days_left=$(datediff "$expiry_date" "$(date +'%Y-%m-%d')")
 #=============end-days-left=================
-#=========================================
-DATE=$(date +'%d %B %Y')
-datediff() {
-    d1=$(date -d "$1" +%s)
-    d2=$(date -d "$2" +%s)
-    echo -e "        ${BIPurple}│$NC Expiry In     : $(( (d1 - d2) / 86400 )) Days $NC"
-}
-mai="datediff "$Exp" "$DATE""
+#===========================================
 echo -e "        ${BIPurple}┌─────────────────────────────────────┐${NC}"
 echo -e "        ${BIPurple}│$NC ${GREEN}Version       : $(cat /opt/.ver) Last Update ${NC}"
 echo -e "        ${BIPurple}│$NC ${GREEN}User          :\033[1;36m $Name \e[0m"
