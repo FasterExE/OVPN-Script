@@ -1,3 +1,4 @@
+MYIP=$(curl -sS ipv4.icanhazip.com)
 izinsc="https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access"
 rm -f /usr/bin/user
 username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
@@ -6,7 +7,6 @@ exp=$(curl $izinsc | grep $MYIP | awk '{print $3}')
 echo "$exp" >/usr/bin/e
 Name=$(cat /usr/bin/user)
 Exp=$(cat /usr/bin/e)
-MYIP=$(curl -sS ipv4.icanhazip.com)
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 domain=$(cat /root/domain)
 CITY=$(curl -s ipinfo.io/city )
