@@ -140,7 +140,7 @@ expiry_date=$(curl -sS https://raw.githubusercontent.com/FasterExE/OVPN-Script/m
 days_left=$(datediff "$expiry_date" "$biji")
 
 if [ "$days_left" -eq 0 ]; then
-    expired_message="Expired"
+    expired_message="${Red}Expired${NC}"
 else
     expired_message=""
 fi
@@ -154,7 +154,7 @@ fi
 echo -e "        ${BIPurple}┌─────────────────────────────────────┐${NC}"
 echo -e "        ${BIPurple}│$NC ${GREEN}Version       : $(cat /etc/version) Last Update ${NC}"
 echo -e "        ${BIPurple}│$NC ${GREEN}User          :\033[1;36m $Name \e[0m"
-echo -e "        ${BIPurple}│$NC ${GREEN}Expiry In     : ${Red}$expiry_text${NC}"
+echo -e "        ${BIPurple}│$NC ${GREEN}Expiry In     : $expiry_text"
 echo -e "        ${BIPurple}└─────────────────────────────────────┘${NC}"
 echo
 read -p " >>>>   " opt
