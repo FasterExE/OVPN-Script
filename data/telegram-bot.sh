@@ -27,8 +27,8 @@ TEXT="Installation VIP OVPN-Script
 <code>Name       :</code> <code>$Name</code>
 <code>Username   :</code> <code>najhi</code>
 <code>Password   :</code> <code>najhi</code>
-<code>IP Vps     :</code> <code>$MYIP</code>
-<code>IP Vps     :</code> <code>$ISP</code>
+<code>IP  Vps     :</code> <code>$MYIP</code>
+<code>ISP Vps    :</code> <code>$ISP</code>
 <code>Timezone   :</code> <code>$TIMEZONE</code>
 <code>Location   :</code> <code>$CITY</code>
 <code>Exp Sc.    :</code> <code>$Exp</code>
