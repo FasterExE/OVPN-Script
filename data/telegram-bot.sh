@@ -1,3 +1,9 @@
+izinsc="https://raw.githubusercontent.com/FasterExE/VIP-Autoscript/main/ipmini"
+rm -f /usr/bin/user
+username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
+echo "$username" >/usr/bin/user
+exp=$(curl $izinsc | grep $MYIP | awk '{print $3}')
+echo "$exp" >/usr/bin/e
 Name=$(cat /usr/bin/user)
 Exp=$(cat /usr/bin/e)
 MYIP=$(curl -sS ipv4.icanhazip.com)
