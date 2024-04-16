@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 ###########- PERMISSION CODE-##############
@@ -75,6 +74,7 @@ else
     red "Permission Denied!"
     exit 0
 fi
+
 
 BIRed='\033[1;91m'
 BIGreen='\033[1;92m'
