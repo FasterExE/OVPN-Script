@@ -3,6 +3,11 @@
 PORT_TCP='1194'
 PORT_UDP='2200'
 #!/bin/bash
+datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo $(( (d1 - d2) / 86400 ))
+}
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 ###########- PERMISSION CODE-##############
@@ -140,7 +145,7 @@ echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}02${BIPurple}] DEL USER    ${BIP
 echo -e "${BIPurple} └─────────────────────────────────────────────────────┘${NC}"
 #================days-left==================
 expiry_date=$(curl -sS https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access | grep "$(curl -sS ipv4.icanhazip.com)" | awk '{print $3}')
-days_left=$(datediff "$expiry_date" "$(date +'%Y-%m-%d')")
+days_left=$("$expiry_date" "$(date +'%Y-%m-%d')")
 echo $days_left
 #=============end-days-left=================
 #=========================================
