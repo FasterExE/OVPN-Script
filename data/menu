@@ -8,6 +8,7 @@ datediff() {
     d2=$(date -d "$2" +%s)
     echo $(( (d1 - d2) / 86400 ))
 }
+
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 ###########- PERMISSION CODE-##############
