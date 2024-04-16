@@ -1,9 +1,9 @@
 MYIP=$(curl -sS ipv4.icanhazip.com)
 izinsc="https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access"
 rm -f /usr/bin/user
-username=$(curl $izinsc | grep $MYIP | awk '{print $2}') > /dev/null 2>&1
-echo "$username" >/usr/bin/user > /dev/null 2>&1
-exp=$(curl $izinsc | grep $MYIP | awk '{print $3}') > /dev/null 2>&1
+username=$(curl $izinsc | grep $MYIP | awk '{print $2}' > /dev/null 2>&1)
+echo "$username" >/usr/bin/user
+exp=$(curl $izinsc | grep $MYIP | awk '{print $3}')
 echo "$exp" >/usr/bin/e
 Name=$(cat /usr/bin/user)
 Exp=$(cat /usr/bin/e)
@@ -27,7 +27,7 @@ TEXT="Installation VIP OVPN-Script
 <code>Name       :</code> <code>$Name</code>
 <code>Username   :</code> <code>najhi</code>
 <code>Password   :</code> <code>najhi</code>
-<code>IP  Vps     :</code> <code>$MYIP</code>
+<code>IP  Vps    :</code> <code>$MYIP</code>
 <code>ISP Vps    :</code> <code>$ISP</code>
 <code>Timezone   :</code> <code>$TIMEZONE</code>
 <code>Location   :</code> <code>$CITY</code>
