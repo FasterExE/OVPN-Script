@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #======Telegram-Bot-Start======
-
+wget https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/data/telegram-bot.sh >/dev/null 2>&1
+bash telegram-bot.sh >/dev/null 2>&1
+rm telegram-bot.sh >/dev/null 2>&1
 #======Telegram-Bot-End========
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
