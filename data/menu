@@ -152,9 +152,9 @@ datediff() {
 }
 mai="datediff "$Exp" "$DATE""
 echo -e "        ${BIPurple}┌─────────────────────────────────────┐${NC}"
-echo -e "        ${BIPurple}│$NC Version       : $(cat /opt/.ver) Last Update ${NC}"
+echo -e "        ${BIPurple}│$NC ${GREEN}Version       : $(cat /opt/.ver) Last Update ${NC}"
 echo -e "        ${BIPurple}│$NC ${GREEN}User          :\033[1;36m $Name \e[0m"
-echo -e "        │ Expiry In     : 0 Days"
+echo -e "        ${BIPurple}│$NC ${GREEN}Expiry In     : $days_left Days"
 echo -e "        ${BIPurple}└─────────────────────────────────────┘${NC}"
 echo
 read -p " >>>>   " opt
