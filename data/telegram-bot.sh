@@ -17,7 +17,7 @@ KEY="7123941357:AAGRvwO9SiZadggGnkpmDeS8XPf1mnP_iOw"
 TIME="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="Installation VIP OVPN-Script
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
 <code>Name       :</code> <code>$Name</code>
 <code>Username   :</code> <code>ilyass</code>
 <code>Password   :</code> <code>najhi</code>
@@ -26,9 +26,9 @@ TEXT="Installation VIP OVPN-Script
 <code>Timezone   :</code> <code>$TIMEZONE</code>
 <code>Location   :</code> <code>$CITY</code>
 <code>Exp Sc.    :</code> <code>$Exp</code>
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
 By Admin 𓆩 𝐈𝐋𝐘𝐀𝐒𝐒 𓆪
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
 <i>Notifications Automatic From Github</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ADMIN","url":"https://t.me/IlyassExE"}]]}' 
 
