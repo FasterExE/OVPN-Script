@@ -1,14 +1,7 @@
 #!/bin/bash
 #Script Variables
-PORT_TCP='1194'
-PORT_UDP='2200'
-#!/bin/bash
-datediff() {
-    d1=$(date -d "$1" +%s)
-    d2=$(date -d "$2" +%s)
-    echo $(( (d1 - d2) / 86400 ))
-}
-#=====premession====start==
+
+#=============premission-start==============
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
@@ -48,7 +41,17 @@ PERMISSION () {
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
-    res="Permission Denied!"
+        echo -e "\033[1;96m──────────────────────────────────\033[0m"
+        echo -e "\033[1;31m        PERMISSION DENIED\033[0m"
+        echo -e "\033[1;96m──────────────────────────────────\033[0m"
+        echo -e "\033[1;97mContact admin to register your vps\033[0m"
+        echo -e "\033[1;97m in the script\033[0m"
+        echo -e "\033[1;94mTelegram: t.me/IlyassExE\033[0m"
+        echo -e "\033[1;92mWhatsapp: wa.me/+447886100711\033[0m"
+        echo -e "\033[1;96m──────────────────────────────────\033[0m"
+        echo -e "\033[1;97m         SCRIPT BY ILYASS\033[0m"
+        echo -e "\033[1;96m──────────────────────────────────\033[0m"
+        exit 0
     fi
     BURIQ
 }
@@ -64,7 +67,8 @@ Exp="\e[36mExpired\033[0m"
 else
 Exp=$(curl -sS https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access | grep $MYIP | awk '{print $3}')
 fi
-#=====premission====end====
+#==============premission-end==============
+
 BIRed='\033[1;91m'
 BIGreen='\033[1;92m'
 BIYellow='\033[1;93m'
@@ -77,6 +81,7 @@ On_IPurple='\033[0;105m'
 On_IRed='\033[0;101m'
 IBlack='\033[0;90m'
 IRed='\033[0;91m'
+Red='\033[1;31m'
 IGreen='\033[0;92m'
 IYellow='\033[0;93m'
 IBlue='\033[0;94m'
@@ -125,14 +130,31 @@ echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}01${BIPurple}] ADD USER    ${BIP
 echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}02${BIPurple}] DEL USER    ${BIPurple}[${BIYellow}Menu${BIPurple}]${NC}"  "${BIPurple} ${BIWhite}  ${BIPurple}                ${BIPurple} ${BIYellow}    ${BIPurple} ${NC}" "${BIPurple} │${NC}"
 echo -e "${BIPurple} └─────────────────────────────────────────────────────┘${NC}"
 #================days-left==================
+datediff() {
+    d1=$(date -d "$1" +%s)
+    d2=$(date -d "$2" +%s)
+    echo $(( (d1 - d2) / 86400 ))
+}
+#=========================================
 expiry_date=$(curl -sS https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access | grep "$(curl -sS ipv4.icanhazip.com)" | awk '{print $3}')
-days_left=$(datediff "$expiry_date" "$(date +'%Y-%m-%d')")
+days_left=$(datediff "$expiry_date" "$biji")
+
+if [ "$days_left" -eq 0 ]; then
+    expired_message="Expired"
+else
+    expired_message=""
+fi
+#=========================================
+if [ "$expired_message" == "Expired" ]; then
+    expiry_text="$expired_message"
+else
+    expiry_text="$days_left Days"
+fi
 #=============end-days-left=================
-#===========================================
 echo -e "        ${BIPurple}┌─────────────────────────────────────┐${NC}"
 echo -e "        ${BIPurple}│$NC ${GREEN}Version       : $(cat /etc/version) Last Update ${NC}"
 echo -e "        ${BIPurple}│$NC ${GREEN}User          :\033[1;36m $Name \e[0m"
-echo -e "        ${BIPurple}│$NC ${GREEN}Expiry In     : $days_left Days"
+echo -e "        ${BIPurple}│$NC ${GREEN}Expiry In     : $expiry_text"
 echo -e "        ${BIPurple}└─────────────────────────────────────┘${NC}"
 echo
 read -p " >>>>   " opt
