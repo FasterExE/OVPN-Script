@@ -144,9 +144,9 @@ echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}01${BIPurple}] ADD USER    ${BIP
 echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}02${BIPurple}] DEL USER    ${BIPurple}[${BIYellow}Menu${BIPurple}]${NC}"  "${BIPurple} ${BIWhite}  ${BIPurple}                ${BIPurple} ${BIYellow}    ${BIPurple} ${NC}" "${BIPurple} │${NC}"
 echo -e "${BIPurple} └─────────────────────────────────────────────────────┘${NC}"
 #================days-left==================
-expiry_date=$(curl -sS https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access | grep "$(curl -sS ipv4.icanhazip.com)" | awk '{print $3}')
-days_left=$("$expiry_date" "$(date +'%Y-%m-%d')")
-echo $days_left
+expiry_date=$(curl -sS https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access | grep "$(curl -sS ipv4.icanhazip.com)" | awk '{print $3}') >/dev/null 2>&1
+days_left=$(datediff "$expiry_date" "$(date +'%Y-%m-%d')") >/dev/null 2>&1
+echo $days_left >/dev/null 2>&1
 #=============end-days-left=================
 #=========================================
 DATE=$(date +'%d %B %Y')
