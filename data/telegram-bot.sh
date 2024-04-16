@@ -1,4 +1,4 @@
-izinsc="https://raw.githubusercontent.com/FasterExE/VIP-Autoscript/main/ipmini"
+izinsc="https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/vps-access"
 rm -f /usr/bin/user
 username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
