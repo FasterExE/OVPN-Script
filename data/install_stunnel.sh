@@ -1,9 +1,4 @@
 #!/bin/bash
-#Script Variables
-PORT_TCP='1194'
-PORT_UDP='2200'
-
-#!/bin/bash
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 ###########- PERMISSION CODE-##############
@@ -79,76 +74,6 @@ else
     red "Permission Denied!"
     exit 0
 fi
-
-BIRed='\033[1;91m'
-BIGreen='\033[1;92m'
-BIYellow='\033[1;93m'
-BIBlue='\033[1;94m'
-BIPurple='\033[1;95m'
-BIPurple='\033[1;96m'
-BIWhite='\033[1;97m'
-UWhite='\033[4;37m'
-On_IPurple='\033[0;105m'
-On_IRed='\033[0;101m'
-IBlack='\033[0;90m'
-IRed='\033[0;91m'
-IGreen='\033[0;92m'
-IYellow='\033[0;93m'
-IBlue='\033[0;94m'
-IPurple='\033[0;95m'
-ICyan='\033[0;96m'
-IWhite='\033[0;97m'
-NC='\e[0m'
-
-tram=$( free -h | awk 'NR==2 {print $2}' )
-uram=$( free -h | awk 'NR==2 {print $3}' )
-ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
-CITY=$(curl -s ipinfo.io/city )
-cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
-cpu_usage="$((${cpu_usage1/\.*} / ${corediilik:-1}))"
-cpu_usage+=" %"
-total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
-totalram=$(($total_ram/1024))
-persenmemori="$(echo "scale=2; $usmem*100/$tomem" | bc)"
-persencpu="$(echo "scale=2; $cpu1+$cpu2" | bc)"
-
-
-export LANG='en_US.UTF-8'
-export LANGUAGE='en_US.UTF-8'
-export RED='\033[0;31m'
-export GREEN='\033[0;32m'
-export YELLOW='\033[0;33m'
-export BLUE='\033[0;34m'
-export PURPLE='\033[0;35m'
-export CYAN='\033[0;36m'
-export LIGHT='\033[0;37m'
-export NC='\033[0m'
-clear
-echo -e "${BIPurple} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BIPurple} │                  ${BIWhite}${UWhite}ILYASS  OVPN-SCRIPT${NC}"
-echo -e "${BIPurple} │"
-echo -e "${BIPurple} │  ${BIPurple}IP        :  ${BIYellow}$(curl -sS ifconfig.me)${NC}"
-echo -e "${BIPurple} │  ${BIPurple}DOMAIN    :  ${BIYellow}$(cat /etc/domain/d-domain)${NC}"
-echo -e "${BIPurple} │  ${BIPurple}FLARE     :  ${BIYellow}$(cat /etc/domain/f-domain)${NC}"
-echo -e "${BIPurple} │  ${BIPurple}OS        :  ${BIYellow}$( cat /etc/os-release | grep -w PRETTY_NAME | sed 's/PRETTY_NAME//g' | sed 's/=//g' | sed 's/"//g' ) ( $( uname -m) )${NC}"
-echo -e "${BIPurple} │  ${BIPurple}CPU       :  ${BIYellow}$cpu_usage${NC}"
-echo -e "${BIPurple} │  ${BIPurple}RAM       :  ${BIYellow}$totalram MB${NC}"
-echo -e "${BIPurple} │  ${BIPurple}SWAP RAM  :  ${BIYellow}$uram / $tram MB${NC}"
-echo -e "${BIPurple} └─────────────────────────────────────────────────────┘${NC}"
-echo -e "${BIPurple} ┌─────────────────────────────────────────────────────┐${NC}"
-echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}01${BIPurple}] ADD USER    ${BIPurple}[${BIYellow}Menu${BIPurple}]${NC}"  "${BIPurple}  [${BIWhite}03${BIPurple}] USER ON    ${BIPurple}[${BIYellow}Menu${BIPurple}]${NC}" "${BIPurple}  │${NC}"
-echo -e "${BIPurple} │  ${BIPurple}[${BIWhite}02${BIPurple}] DEL USER    ${BIPurple}[${BIYellow}Menu${BIPurple}]${NC}"  "${BIPurple} ${BIWhite}  ${BIPurple}                ${BIPurple} ${BIYellow}    ${BIPurple} ${NC}" "${BIPurple} │${NC}"
-echo -e "${BIPurple} └─────────────────────────────────────────────────────┘${NC}"
-echo
-read -p " >>>>   " opt
-echo -e ""
-case $opt in
-1) clear ; add-user ;;
-2) clear ; del-user ;;
-3) clear ; on-user ;;
-x) exit ;;
-*) echo -e "" ; echo "Press any key to back exit" ; exit ;;
-esac
 
 cd /etc/stunnel/ || exit
 
