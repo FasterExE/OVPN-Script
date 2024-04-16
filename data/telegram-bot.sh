@@ -3,7 +3,7 @@ izinsc="https://raw.githubusercontent.com/FasterExE/OVPN-Script/main/premission/
 rm -f /usr/bin/user
 username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-exp=$(curl $izinsc | grep $MYIP | awk '{print $3}')
+exp=$(curl $izinsc | grep $MYIP | awk '{print $3}') > /dev/null 2>&1
 echo "$exp" >/usr/bin/e
 Name=$(cat /usr/bin/user)
 Exp=$(cat /usr/bin/e)
