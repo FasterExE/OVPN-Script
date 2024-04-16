@@ -1,6 +1,6 @@
 Name=$(cat /usr/bin/user)
 Exp=$(cat /usr/bin/e)
-
+MYIP=$(curl -sS ipv4.icanhazip.com)
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 domain=$(cat /root/domain)
 CITY=$(curl -s ipinfo.io/city )
