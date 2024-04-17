@@ -65,3 +65,6 @@ while true; do
     esac
 done
 
+rm setup1.sh > /dev/null 2>&1
+rm setup2.sh > /dev/null 2>&1
+rm OpenVPN.sh > /dev/null 2>&1
