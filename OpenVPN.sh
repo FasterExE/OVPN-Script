@@ -35,8 +35,8 @@ while true; do
             clear
             wget https://raw.githubusercontent.com/FasterExE/OVPN-Script-Classic/main/setup1.sh > /dev/null 2>&1
             if [ $? -eq 0 ]; then
-                bash setup.sh
-                rm setup.sh > /dev/null 2>&1
+                bash setup1.sh
+                rm setup1.sh > /dev/null 2>&1
             else
                 echo -e "${RED}Download failed.${NC}"
             fi
@@ -46,8 +46,8 @@ while true; do
             clear
             wget https://raw.githubusercontent.com/FasterExE/OVPN-Script-V3/main/setup2.sh > /dev/null 2>&1
             if [ $? -eq 0 ]; then
-                bash setup.sh
-                rm setup.sh > /dev/null 2>&1
+                bash setup2.sh
+                rm setup2.sh > /dev/null 2>&1
             else
                 echo -e "${RED}Download failed.${NC}"
             fi
