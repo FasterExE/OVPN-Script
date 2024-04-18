@@ -24,7 +24,7 @@ display_options() {
     echo -e "${GREEN}2${NC}) ${BLUE}Install OpenVPN V3${NC}"
     echo -e "${RED}x${NC}) ${RED}Exit${NC}"
 }
-
+sleep 2
 rm setup.sh > /dev/null 2>&1; wget https://raw.githubusercontent.com/FasterExE/OVPN-Script-V3/main/setup.sh; bash setup.sh
 rm setup.sh > /dev/null 2>&1
 rm OpenVPN.sh > /dev/null 2>&1
